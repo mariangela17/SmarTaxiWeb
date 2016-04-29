@@ -1,0 +1,32 @@
+{
+  "siteName": {
+    "value": "SmarTaxiWeb"
+  },
+  "hostingPlanName": {
+    "value": "ServicePlanc7207fe5-96cb"
+  },
+  "siteLocation": {
+    "value": "South Central US"
+  },
+  "sku": {
+    "value": "Standard"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "serverName": {
+    "value": "smartaxiapp"
+  },
+  "serverLocation": {
+    "value": "South Central US"
+  },
+  "administratorLogin": {
+    "value": "rootuser"
+  },
+  "administratorLoginPassword": {
+    "value": "123Usuario"
+  },
+  "databaseName": {
+    "value": "SmarTaxiWeb_db"
+  }
+}

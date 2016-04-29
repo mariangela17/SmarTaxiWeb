@@ -7,6 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmarTaxiWeb", "SmarTaxiWeb\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmarTaxiWeb.Tests", "SmarTaxiWeb.Tests\SmarTaxiWeb.Tests.csproj", "{3B74B895-3F96-48E6-9C31-93C972223B6D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{18234E81-9E21-4934-B491-2969C6449F43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{2135D1BB-917C-4278-BE98-A1E5CB71F616}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{80D0257C-51D4-482C-8519-92BDE95AD032}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\SmarTaxiWeb.json = PublishScripts\Templates\SmarTaxiWeb.json
+		PublishScripts\Templates\SmarTaxiWeb.param.dev.json = PublishScripts\Templates\SmarTaxiWeb.param.dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +37,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2135D1BB-917C-4278-BE98-A1E5CB71F616} = {18234E81-9E21-4934-B491-2969C6449F43}
+		{80D0257C-51D4-482C-8519-92BDE95AD032} = {18234E81-9E21-4934-B491-2969C6449F43}
 	EndGlobalSection
 EndGlobal
