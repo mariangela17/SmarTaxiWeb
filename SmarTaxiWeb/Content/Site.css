@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Este es el header*/
+.navbar {
+    background:#ffc300;
+}
+
+ .navbar-brand, .navbar-inverse a {
+    color:#000000;
+}
