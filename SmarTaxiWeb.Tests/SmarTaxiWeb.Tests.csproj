@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmarTaxiWeb\SmarTaxiWeb.csproj">
-      <Project>{E1FDEC67-1199-4D65-9100-B21AA15914C6}</Project>
+      <Project>{e1fdec67-1199-4d65-9100-b21aa15914c6}</Project>
       <Name>SmarTaxiWeb</Name>
     </ProjectReference>
   </ItemGroup>
