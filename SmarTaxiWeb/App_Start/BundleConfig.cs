@@ -21,10 +21,14 @@ namespace SmarTaxiWeb
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/material.min.js",
+                      "~/Scripts/ripples.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-material-design.min.css",
+                      "~/Content/ripples.min.css",
                       "~/Content/site.css",
                       "~/Content/font-awesome.css"));
         }
