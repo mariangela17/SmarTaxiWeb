@@ -14,13 +14,7 @@
         @Styles.Render("~/Content/css")
         @*@Scripts.Render("~/bundles/modernizr")*@
         <!-- EOF CSS INCLUDE -->               
-        
-        <!-- START SCRIPTS -->
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/jquerycontinue")
-        @RenderSection("scripts", required: false)
-        <!-- END SCRIPTS -->  
-                             
+                                     
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
@@ -221,6 +215,11 @@
         </div>
         <!-- END MESSAGE BOX-->              
         
+        <!-- START SCRIPTS -->
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueries")
+        @RenderSection("scripts", required: false)
+        <!-- END SCRIPTS -->  
            
     </body>
 </html>
