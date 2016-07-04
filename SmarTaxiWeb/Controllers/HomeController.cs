@@ -10,6 +10,11 @@ namespace SmarTaxiWeb.Controllers
     {
         public ActionResult Index()
         {
+            if (Request.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Management");
+            }
+
             return View();
         }
 
@@ -23,7 +28,6 @@ namespace SmarTaxiWeb.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

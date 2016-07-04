@@ -9,12 +9,12 @@ namespace SmarTaxiWeb
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/js/plugins/jquery/jquery.min.js"
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-ui-{version}.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueries").Include(
-                        "~/Scripts/js/plugins/jquery/jquery-ui.min.js",
-                        "~/Scripts/js/plugins/bootstrap/bootstrap.min.js",
+                        "~/Scripts/bootstrap.min.js",
                         "~/Scripts/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js",
                         "~/Scripts/js/plugins.js",
                         "~/Scripts/js/actions.js",

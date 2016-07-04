@@ -110,6 +110,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.1\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -172,6 +176,7 @@
     <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,14 +199,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\filetree\jqueryFileTree.asp" />
-    <Content Include="assets\filetree\jqueryFileTree.aspx" />
-    <Content Include="assets\fileupload\cors\postmessage.html" />
-    <Content Include="assets\fileupload\cors\result.html" />
-    <Content Include="assets\fileupload\files\2V_vkjfD5Gg.jpg" />
-    <Content Include="assets\fileupload\files\thumbnail\2V_vkjfD5Gg.jpg" />
-    <Content Include="assets\images\blog\post_1.jpg" />
-    <Content Include="assets\images\blog\post_2.jpg" />
+    <Content Include="assets\images\gallery\blog\post_1.jpg" />
+    <Content Include="assets\images\gallery\blog\post_2.jpg" />
     <Content Include="assets\images\gallery\girls-1.jpg" />
     <Content Include="assets\images\gallery\girls-2.jpg" />
     <Content Include="assets\images\gallery\girls-3.jpg" />
@@ -230,36 +229,12 @@
     <Content Include="assets\images\users\user5.jpg" />
     <Content Include="assets\images\users\user6.jpg" />
     <Content Include="assets\images\users\user7.jpg" />
-    <Content Include="assets\uploads\Images\Animal 48.jpg" />
-    <Content Include="assets\uploads\Images\Lotus Sport Exige Gt3 01.jpg" />
-    <Content Include="assets\uploads\Images\peugeot_908rc-1600x1200.jpg" />
-    <Content Include="assets\uploads\Images\Photoshop_Multi-coloured_butterflies_023732_.jpg" />
-    <Content Include="assets\uploads\Images\Quiet Getaway, Lake Tahoe, Nevada-565362.jpeg" />
-    <Content Include="assets\uploads\Images\Space_Launching_pad_023724_.jpg" />
-    <Content Include="assets\uploads\Images\Sport_Extreme__Waves__Ocean__Risk__Surfing_023731_.jpg" />
-    <Content Include="assets\uploads\Images\Sritney_Spears2_1920x1200.jpg" />
-    <Content Include="assets\uploads\Images\u3013_1278_53405-1600x1200.jpg" />
-    <Content Include="assets\uploads\Images\u9644_3151_love_4.jpg" />
-    <Content Include="assets\uploads\Images\white-aston-martin-wallpaper-1920x1080-1008078.jpg" />
-    <Content Include="assets\uploads\Images\white_curved_building-1920x1200.jpg" />
-    <Content Include="assets\uploads\Images\wide-wallpaper-1920x1080-001.jpg" />
-    <Content Include="assets\uploads\Images\wide-wallpaper-1920x1080-001234.jpg" />
-    <Content Include="assets\uploads\Images\windows_7___dragon-2560x1600.jpg" />
-    <Content Include="assets\uploads\Images\World_other_world_Costa_Rica__Puntarenas_023746_.jpg" />
-    <Content Include="assets\uploads\MIME-Types\books.xml" />
-    <Content Include="assets\uploads\MIME-Types\elfinder.css" />
-    <Content Include="assets\uploads\MIME-Types\elfinder.full.js" />
-    <Content Include="assets\uploads\MIME-Types\fireworks.swf" />
-    <Content Include="assets\uploads\MIME-Types\fishes.jpg" />
-    <Content Include="assets\uploads\MIME-Types\google.html" />
-    <Content Include="assets\uploads\MIME-Types\phuket.tiff" />
-    <Content Include="assets\uploads\MIME-Types\rm.wav" />
-    <Content Include="assets\uploads\MIME-Types\test-pivot.sql" />
-    <Content Include="assets\uploads\MIME-Types\virus.exe" />
-    <Content Include="assets\uploads\MIME-Types\vmware-win-ie8-elfinder.png" />
-    <Content Include="assets\uploads\MIME-Types\YUICompressor.java" />
     <Content Include="Content\animate\animate.css" />
     <Content Include="Content\animate\animate.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\font-awesome-ie7.css" />
     <Content Include="Content\font-awesome.css" />
@@ -272,8 +247,42 @@
     <Content Include="Content\skt-animation.css" />
     <Content Include="Content\superfish.css" />
     <Content Include="Content\theme-default.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\client-logo1.png" />
@@ -293,36 +302,24 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="assets\ajax_fullcalendar.php" />
-    <Content Include="assets\filetree\jqueryFileTree.cf" />
-    <Content Include="assets\filetree\jqueryFileTree.jsp" />
-    <Content Include="assets\filetree\jqueryFileTree.php" />
-    <Content Include="assets\filetree\jqueryFileTree.pl" />
-    <Content Include="assets\filetree\jqueryFileTree.py" />
-    <Content Include="assets\filetree\jqueryFileTree.rb" />
-    <Content Include="assets\filetree\jqueryFileTree_huck.lasso" />
-    <Content Include="assets\filetree\jqueryFileTree_sabourdin.lasso" />
-    <Content Include="assets\fileupload\files\.htaccess" />
-    <Content Include="assets\fileupload\index.php" />
-    <Content Include="assets\fileupload\UploadHandler.php" />
-    <Content Include="assets\plugins\nvd3\cumulativeLineData.json" />
-    <Content Include="assets\plugins\nvd3\linePlusBarData.json" />
-    <Content Include="assets\plugins\nvd3\multiBarHorizontalData.json" />
-    <Content Include="assets\plugins\nvd3\stackedAreaData.json" />
-    <Content Include="assets\upload.php" />
-    <Content Include="assets\uploads\MIME-Types\archive.rar" />
-    <Content Include="assets\uploads\MIME-Types\archive.tar.gz" />
-    <Content Include="assets\uploads\MIME-Types\archive.zip" />
-    <Content Include="assets\uploads\MIME-Types\elFinder.class.php" />
-    <Content Include="assets\uploads\MIME-Types\elFinder.py" />
-    <Content Include="assets\uploads\MIME-Types\milter-greylist.c" />
-    <Content Include="assets\uploads\MIME-Types\munin_httptime.sh" />
-    <Content Include="assets\uploads\MIME-Types\Payment Icons.zip" />
-    <Content Include="assets\uploads\MIME-Types\Supervisor.doc" />
     <Content Include="package.json" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\SmarTaxiWeb.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\faq.js" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\js\actions.js" />
     <Content Include="Scripts\js\plugins.js" />
     <Content Include="Scripts\js\plugins\blueimp\jquery.blueimp-gallery.min.js" />
@@ -585,9 +582,6 @@
     <Content Include="Scripts\js\plugins\jquery-validation\localization\methods_fi.js" />
     <Content Include="Scripts\js\plugins\jquery-validation\localization\methods_nl.js" />
     <Content Include="Scripts\js\plugins\jquery-validation\localization\methods_pt.js" />
-    <Content Include="Scripts\js\plugins\jquery\jquery-migrate.min.js" />
-    <Content Include="Scripts\js\plugins\jquery\jquery-ui.min.js" />
-    <Content Include="Scripts\js\plugins\jquery\jquery.min.js" />
     <Content Include="Scripts\js\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
     <Content Include="Scripts\js\plugins\jvectormap\jquery-jvectormap-europe-mill-en.js" />
     <Content Include="Scripts\js\plugins\jvectormap\jquery-jvectormap-uakraine-merc-en.js" />
@@ -747,7 +741,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TemplateLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -772,21 +766,16 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Driver\CreateDriver.cshtml" />
-    <Content Include="Views\Shared\_LayoutMain.cshtml" />
-    <Content Include="Scripts\js\plugins\jquery\jquery-2.1.1.min.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\js\plugins\tableexport\simple_html_dom.php" />
+    <Content Include="Views\Management\_ViewStart.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
+    <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <Content Include="Views\Management\CamarasTaxistas.cshtml" />
+    <Content Include="Views\Management\Mensajeria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\uploads\Welcome\folder 1\" />
-    <Folder Include="assets\uploads\Welcome\folder 2\folder 1\" />
-    <Folder Include="assets\uploads\Welcome\folder 2\folder 2\" />
-    <Folder Include="assets\uploads\Welcome\folder 2\folder 3\" />
-    <Folder Include="assets\uploads\Welcome\folder 2\folder 4\" />
-    <Folder Include="assets\uploads\Welcome\folder 2\folder 5\" />
-    <Folder Include="assets\uploads\Welcome\folder 3\" />
-    <Folder Include="assets\uploads\Welcome\folder 4\" />
-    <Folder Include="assets\uploads\Welcome\folder 5\" />
     <Folder Include="Scripts\js\plugins\fileinput\fileinput\" />
   </ItemGroup>
   <ItemGroup>
